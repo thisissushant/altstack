@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node.js Quiz Application</title>
+  </head>
+  <body>
+    <h1>Node.js Quiz Application</h1>
+    <div id="quiz-container"></div>
+    <button id="submit-btn">Submit Answers</button>
+    <script>
+      const quizContainer = document.getElementById("quiz-container");
+      const submitButton = document.getElementById("submit-btn");
+
+      async function fetchQuestions() {
+        const response = await fetch("/question");
+        const data = await response.json();
+        displayQuestions(data);
+      }
+
+      function displayQuestions(question) {
+        question.forEach((question, index) => {
+          const questionElement = document.createElement("div");
+          questionElement.innerHTML = `
+        <p>${index + 1}. ${question.question}</p>
+        <ul>
+          ${question.options
+            .map(
+              (option, optionIndex) => `
+            <li>
+              <input type="checkbox" id="q${index}-option${optionIndex}" value="${optionIndex}">
+              <label for="q${index}-option${optionIndex}">${option}</label>
+            </li>
+          `
+            )
+            .join("")}
+        </ul>
+      `;
+          quizContainer.appendChild(questionElement);
+        });
+      }
+      submitButton.addEventListener("click", async () => {
+        const answers = [];
+        document
+          .querySelectorAll('input[type="checkbox"]:checked')
+          .forEach((input) => {
+            const [questionIndex, optionIndex] = input.id.split("-").slice(-2);
+            answers[parseInt(questionIndex)] = parseInt(optionIndex);
+          });
+        const response = await fetch("/submit-answers", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ answers: answers }),
+        });
+        const data = await response.json();
+        alert(`Your score: ${data.score}/${answers.length}`);
+      });
+
+      fetchQuestions();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+[
+  {
+    "question": "What is Node.js?",
+    "options": [
+      "A) A JavaScript framework",
+      "B) A runtime environment for executing JavaScript code outside the browser",
+      "C) A package manager for JavaScript"
+    ],
+    "answer": "B"
+  },
+  {
+    "question": "Which of the following is NOT a core module in Node.js?",
+    "options": ["A) fs (File System)", "B) http (HTTP)", "C) path (Path)"],
+    "answer": "C"
+  },
+  {
+    "question": "What is the event loop in Node.js?",
+    "options": [
+      "A) A loop that iterates through events in an event emitter",
+      "B) A mechanism that allows Node.js to perform non-blocking I/O operations",
+      "C) A function that handles errors in Node.js applications"
+    ],
+    "answer": "B"
+  },
+  {
+    "question": "How does Node.js handle asynchronous operations?",
+    "options": [
+      "A) By using callbacks",
+      "B) By using promises",
+      "C) By using async/await"
+    ],
+    "answer": "A"
+  },
+  {
+    "question": "What is the purpose of the require function in Node.js?",
+    "options": [
+      "A) To import modules",
+      "B) To create new modules",
+      "C) To define routes in an Express application"
+    ],
+    "answer": "A"
+  },
+  {
+    "question": "Which of the following is NOT a valid way to handle errors in Node.js?",
+    "options": [
+      "A) Using try/catch blocks",
+      "B) Using the EventEmitter class",
+      "C) Using callback functions with an error parameter"
+    ],
+    "answer": "B"
+  },
+  {
+    "question": "What is npm?",
+    "options": [
+      "A) Node Package Manager, used for managing packages and dependencies in Node.js projects",
+      "B) Node Programming Module, used for creating custom modules in Node.js",
+      "C) Node Package Manager, used for managing the Node.js runtime environment"
+    ],
+    "answer": "A"
+  },
+  {
+    "question": "What is the purpose of the __dirname variable in Node.js?",
+    "options": [
+      "A) To store the directory name of the current module",
+      "B) To store the directory name of the main module",
+      "C) To store the directory name of the parent module"
+    ],
+    "answer": "A"
+  },
+  {
+    "question": "What is the purpose of the process object in Node.js?",
+    "options": [
+      "A) To provide information about the current Node.js process",
+      "B) To handle file system operations",
+      "C) To manage child processes in Node.js"
+    ],
+    "answer": "A"
+  },
+  {
+    "question": "Which of the following is true about streams in Node.js?",
+    "options": [
+      "A) Streams are used for handling synchronous I/O operations",
+      "B) Streams are instances of EventEmitter class",
+      "C) Streams are used for handling large amounts of data efficiently"
+    ],
+    "answer": "C"
+  }
+]
